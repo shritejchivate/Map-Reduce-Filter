@@ -1,0 +1,113 @@
+es6 example
+
+
+1] 
+      var materials = [
+     'Hydrogen',
+     'Helium',
+     'Lithium',
+     'Beryllium'
+    ];
+
+    console.log(materials.map(material => material.length));
+
+------------------------------------------------------------------------
+
+2]
+      const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+      const divisibleByThrreeES6 = array.filter(v => v % 3 === 0);
+
+     console.log(divisibleByThrreeES6); 
+
+---------------------------------------------------------------------------
+
+3]
+     
+     var pilots = [
+  {
+    id: 2,
+    name: "Wedge Antilles",
+    faction: "Rebels",
+  },
+  {
+    id: 8,
+    name: "Ciena Ree",
+    faction: "Empire",
+  },
+  {
+    id: 40,
+    name: "Iden Versio",
+    faction: "Empire",
+  },
+  {
+    id: 66,
+    name: "Thane Kyrell",
+    faction: "Rebels",
+  }
+];
+const Rebels = pilots.filter(pilot => pilot.faction ==="Rebels" );
+console.log(Rebels);
+
+const empire = pilots.filter(pilot => pilot.faction === "Empire");
+console.log(empire);
+
+------------------------------------------------------------------------
+
+4 ]
+     
+      var personnel = [
+  {
+    id: 5,
+    name: "Luke Skywalker",
+    pilotingScore: 98,
+    shootingScore: 56,
+    isForceUser: true,
+  },
+  {
+    id: 82,
+    name: "Sabine Wren",
+    pilotingScore: 73,
+    shootingScore: 99,
+    isForceUser: false,
+  },
+  {
+    id: 22,
+    name: "Zeb Orellios",
+    pilotingScore: 20,
+    shootingScore: 59,
+    isForceUser: false,
+  },
+  {
+    id: 15,
+    name: "Ezra Bridger",
+    pilotingScore: 43,
+    shootingScore: 67,
+    isForceUser: true,
+  },
+  {
+    id: 11,
+    name: "Caleb Dume",
+    pilotingScore: 71,
+    shootingScore: 85,
+    isForceUser: true,
+  },
+];
+
+
+const result1 = personnel.filter(person => person.isForceUser)
+                         .map(jedi => jedi.pilotingScore + jedi.shootingScore)
+console.log(result1 );
+
+-------------------------------------------------------------------------------------------
+
+
+ 5]
+
+    const family =[{"name":"Jack",  "age": 26},
+              {"name":"Jill",  "age": 22},
+              {"name":"James", "age": 5 },
+              {"name":"Jenny", "age": 2 }];
+
+const adults = family.filter( ({age}) => age > 18)
+console.log(adults)
+
