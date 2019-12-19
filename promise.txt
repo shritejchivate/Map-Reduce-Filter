@@ -1,0 +1,512 @@
+const show = (family,obj) => {
+    return new Promise( (resolve,reject) => {
+        if(family.length > 0)
+        {
+            const result = family.filter( (f) => {return f.age > obj.age } );
+            resolve(result);
+        }
+        else
+        {
+           reject( { message : ' No Element in family array ' });
+        }
+    } );
+}
+const family =[{"name":"Jack",  "age": 26},
+               {"name":"Jill",  "age": 22},
+               {"name":"James", "age": 5 },
+               {"name":"Jenny", "age": 2 },
+               {"name":"Jenny", "age": 1 } ];
+show(family,{age:3}).then( (data) =>  { return data })
+                    .then( (data) =>  {
+                        const result = data.map( ({name,age}) =>  ({name,age}) );
+                        return result;})
+                    .then( (data) => {
+                        const result = data.reduce((acc,p) => { return acc + p.age },0)
+                        return result;} )
+                     .then( (data) => console.log(data) )
+                    .catch( (err) => console.log(err));
+-------------------------------------------------------------------------------------------------------------
+const showDogs = (data) => {
+  return new Promise( (resolve,reject) => {
+        if(data.length > 0 )
+        {
+            const result  = data.filter( (d) => { return d.type === 'dog' });
+            resolve(result);
+        }
+        else
+        {
+            reject({ message : 'No Records in Dog array'})
+        }
+   });
+};
+const showMul = (data,x) => {
+    return new Promise( (resolve,reject) => {
+        if(data.length > 0 )
+        {
+            const result  = data.map( (d) => { return d.age * x });
+            resolve(result);
+        }
+        else
+        {
+            reject({ message : 'No Records in Dog array'})
+        }
+   });
+}
+const showSumAge = (data) => {
+    return new Promise( (resolve,reject) => {
+        if(data.length > 0 )
+        {
+            const result  = data.reduce( (sum,d) => { return sum + d},0);
+            resolve(result);
+        }
+        else
+        {
+            reject({ message : 'No Records in Dog array'})
+        }
+   });
+}
+data = [
+  {
+    name: 'Butters',
+    age: 3,
+    type: 'dog'
+  },
+  {
+    name: 'Lizzy',
+    age: 6,
+    type: 'dog'
+  },
+  {
+    name: 'Red',
+    age: 1,
+    type: 'cat'
+  },
+  {
+    name: 'Joey',
+    age: 3,
+    type: 'dog'
+  },
+];
+showDogs(data).then( (result) => { return result } )
+              .then( (result) => {
+                showMul(result,7).then( (data) => { return  data } )
+                .then( (result) => {
+                    showSumAge(result).then( (data) => { console.log(data) } )
+                } )
+              })
+              .catch( (err) => { console.log(err)} );
+------------------------------------------------------------------------------------------------ 
+
+const operation=(a,b,opr) => {
+  return new Promise((resolve,reject) =>
+  {
+     if(opr =='+')
+     resolve(a+b);
+     if(opr =='-')
+     resolve(a-b);
+     if(opr =='*')
+     resolve(a*b);
+     if(opr =='/')
+     resolve(a/b);
+     else
+     reject({message:'Invalid operator..'});
+
+  })
+};
+
+operation(10,20,'+').then((result)=>{return result;})
+                    .then((result)=> {console.log('Result is',result);})
+                    .catch((err)=>{console.log(err)});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const showDogs = (data) => {
+  return new Promise( (resolve,reject) => {
+        if(data.length > 0 )
+        {
+            const result  = data.filter( (d) => { return d.type === 'dog' });
+            resolve(result);
+        }
+        else
+        {
+            reject({ message : 'No Records in Dog array'})
+        }
+   });
+};
+const showMul = (data,x) => {
+    return new Promise( (resolve,reject) => {
+        if(data.length > 0 )
+        {
+            const result  = data.map( (d) => { return d.age * x });
+            resolve(result);
+        }
+        else
+        {
+            reject({ message : 'No Records in Dog array'})
+        }
+   });
+}
+const showSumAge = (data) => {
+    return new Promise( (resolve,reject) => {
+        if(data.length > 0 )
+        {
+            const result  = data.reduce( (sum,d) => { return sum + d.age},0);
+            resolve(result);
+        }
+        else
+        {
+            reject({ message : 'No Records in Dog array'})
+        }
+   });
+}
+data = [
+  {
+    name: 'Butters',
+    age: 3,
+    type: 'dog'
+  },
+  {
+    name: 'Lizzy',
+    age: 6,
+    type: 'dog'
+  },
+  {
+    name: 'Red',
+    age: 1,
+    type: 'cat'
+  },
+  {
+    name: 'Joey',
+    age: 3,
+    type: 'dog'
+  },
+];
+const p = Promise.all([ showDogs(data) , showMul(data,7) , showSumAge(data) ]);
+p.then( (data)=> console.log(data));dsfsd
